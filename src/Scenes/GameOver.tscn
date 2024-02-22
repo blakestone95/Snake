@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d24usm068y0tc"]
+[gd_scene load_steps=7 format=3 uid="uid://d24usm068y0tc"]
 
 [ext_resource type="Script" path="res://src/Scenes/GameOver.cs" id="1_xxye2"]
 
@@ -10,6 +10,22 @@ font_size = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up6a1"]
 bg_color = Color(0.435294, 0.435294, 0.435294, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cykq3"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2efk5"]
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -86,6 +102,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_up6a1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cykq3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2efk5")
 button_mask = 3
 text = "Restart"
 
