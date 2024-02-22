@@ -21,6 +21,7 @@ project/assembly_name="Snake"
 
 [layer_names]
 
-2d_physics/layer_1="player"
-2d_physics/layer_2="food"
-2d_physics/layer_3="walls"
+2d_physics/layer_1="head"
+2d_physics/layer_2="tail"
+2d_physics/layer_3="food"
+2d_physics/layer_4="walls"

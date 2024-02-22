@@ -36,4 +36,13 @@ public partial class Player : Area2D
 		Vector2 velocity = new Vector2(direction.X * Speed, direction.Y * Speed);
 		Position += velocity * (float)delta;
 	}
+
+	public void OnBodyEntered(Node2D node)
+	{
+		// Probably fragile to check based on name... Can we check what collision layer?
+		if (node.Name == "Boundary" || node.Name == "Tail")
+		{
+			GetTree().ChangeSceneToFile("res://src/Scenes/GameOver.tscn");
+		}
+	}
 }
