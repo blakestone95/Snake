@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Snake;
 
 public partial class Player : Area2D
 {
@@ -13,6 +14,8 @@ public partial class Player : Area2D
 	private List<StaticBody2D> tail = new();
 	[Export]
 	public PackedScene TailScene { get; set; }
+	[Signal]
+	public delegate void ScoreEventHandler();
 
 	// Note to self: this is not an actual function on the parent class,
 	// it's just a way to stay organized
@@ -49,7 +52,12 @@ public partial class Player : Area2D
 		{
 			GetTree().ChangeSceneToFile("res://src/Scenes/GameOver.tscn");
 		}
-		// TODO: Food
+		else if (node.Name == "Food")
+		{
+			Globals.Score += 1;
+			length += 1;
+			EmitSignal(SignalName.Score);
+		}
 	}
 
 	public void Move()
