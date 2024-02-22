@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://jtvty5nj2rwp"]
+[gd_scene load_steps=3 format=3 uid="uid://jtvty5nj2rwp"]
 
-[ext_resource type="Script" path="res://src/Actors/Tail.cs" id="1_xcq3q"]
 [ext_resource type="Texture2D" uid="uid://c6jvuqblgjjut" path="res://assets/Snake Segment.png" id="2_yi350"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4x7i"]
-size = Vector2(100, 100)
+size = Vector2(30, 30)
 
 [node name="Tail" type="StaticBody2D"]
 collision_layer = 2
-script = ExtResource("1_xcq3q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_u4x7i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
 texture = ExtResource("2_yi350")

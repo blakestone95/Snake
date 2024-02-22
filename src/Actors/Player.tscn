@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbu4ajq0a5sle"]
+[gd_scene load_steps=5 format=3 uid="uid://dbu4ajq0a5sle"]
 
 [ext_resource type="Script" path="res://src/Actors/Player.cs" id="1_2lvms"]
+[ext_resource type="PackedScene" uid="uid://jtvty5nj2rwp" path="res://src/Actors/Tail.tscn" id="2_5ufex"]
 [ext_resource type="Texture2D" uid="uid://c6jvuqblgjjut" path="res://assets/Snake Segment.png" id="2_867ju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4x7i"]
-size = Vector2(100, 100)
+size = Vector2(30, 30)
 
 [node name="Player" type="Area2D"]
 collision_mask = 15
 script = ExtResource("1_2lvms")
+TailScene = ExtResource("2_5ufex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_u4x7i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
 texture = ExtResource("2_867ju")
 
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
