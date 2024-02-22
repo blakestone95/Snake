@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbu4ajq0a5sle"]
+
+[ext_resource type="Script" path="res://src/Actors/Player.cs" id="1_2lvms"]
+[ext_resource type="Texture2D" uid="uid://c6jvuqblgjjut" path="res://assets/Snake Segment.png" id="2_867ju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4x7i"]
+size = Vector2(100, 100)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_2lvms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u4x7i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_867ju")
